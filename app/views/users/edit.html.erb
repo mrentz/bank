@@ -1,0 +1,11 @@
+<h1>Edit <%= @user.first_name %>'s Details</h1>
+<%= form_tag :action => 'update', :id => @user %>
+<p><label for="user_first_name">First Name</label>
+<%= text_field 'user', 'first_name' %></p>
+<p><label for="user_last_name">Last Name</label>:
+<%= text_field 'user', 'last_name' %></p>
+<p><label for="user_ballance">Ballance</label>:
+<%= text_field 'user', 'ballance' %></p>
+<%= submit_tag "Update" %>
+<%= link_to 'Back', {:action => 'list'} %>
+
