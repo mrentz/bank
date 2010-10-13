@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+#map.resources :users
 map.root :controller => 'users', :action => 'list'
-map.home '/new', :controller => 'users', :action => 'new'
+map.new '/new', :controller => 'users', :action => 'new'
 
 # The priority is based upon order of creation: first created -> highest priority.
 

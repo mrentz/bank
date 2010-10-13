@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101010010233) do
+ActiveRecord::Schema.define(:version => 20101013042215) do
 
   create_table "users", :force => true do |t|
     t.string   "first_name", :limit => 20, :null => false
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20101010010233) do
     t.integer  "account_no"
     t.float    "ballance"
     t.datetime "created_at"
+    t.string   "email"
   end
 
 end
