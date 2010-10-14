@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20101013042215
+#
+# Table name: users
+#
+#  id         :integer         not null, primary key
+#  first_name :string(20)      not null
+#  last_name  :string(20)      not null
+#  account_no :integer
+#  ballance   :float
+#  created_at :datetime
+#  email      :string(255)
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:

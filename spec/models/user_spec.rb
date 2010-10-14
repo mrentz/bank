@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20101013042215
+#
+# Table name: users
+#
+#  id         :integer         not null, primary key
+#  first_name :string(20)      not null
+#  last_name  :string(20)      not null
+#  account_no :integer
+#  ballance   :float
+#  created_at :datetime
+#  email      :string(255)
+#
+
 require 'spec_helper'
 
 describe User do
@@ -29,10 +43,13 @@ describe User do
     no_name_user = User.new(@valid_attributes.merge(:first_name => "abcdefghiklmn"))
     no_name_user.should_not be_valid
   end
-
-  it "should require a valid email" do
-    no_name_user = User.new(@valid_attributes.merge(:email => "asdffds"))
-    no_name_user.should_not be_valid
+  
+  valid_emails = ["email@address.one", "email2@address.one.two"]
+  valid_emails.each do |email|  
+    it "should accept a valid email address" do
+      no_name_user = User.new(@valid_attributes.merge(:email => email))
+      no_name_user.should be_valid
+    end
   end
 
 end
