@@ -1,8 +1,11 @@
 <h1><%= "Account: #{@user.id}" %></h1>
-<p><strong>Name : </strong> <%= "#{@user.first_name} #{@user.last_name}" %><br/>
-<strong>Email :</strong> <%= @user.email %><br />
-<strong>Ballance :</strong> $<%= @user.ballance %><br />
+<p><strong>Name: </strong> <%= "#{@user.first_name} #{@user.last_name}" %><br/>
+<strong>Email:</strong> <%= @user.email %><br />
+<strong>Ballance:</strong> $<%= @user.ballance %><br />
 <strong>Created Date:</strong> <%= @user.created_at %><br />
 </p>
 <hr />
 <%= link_to 'Back', {:action => 'list'} %>
+<%= link_to 'Edit', {:action => 'edit', :id => @user.id} %>
+<b> <%= link_to "Delete", {:action => 'delete', :id => @user.id},
+:confirm => "Are you sure you want to delete this item?" %></b>
