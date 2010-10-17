@@ -9,13 +9,15 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @accounts = Account.find(:all)
   end
-
+  
   def create
     @user = User.new(params[:user])
     if @user.save
       redirect_to :action => 'list'
     else
+      @accounts = Accounts.find(:all)
       render :action => 'new'
     end
   end
@@ -37,4 +39,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
+
+  def show_accounts
+   @account_type = AccountType.find(params[:id])
+  end
+
 end

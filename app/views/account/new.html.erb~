@@ -1,0 +1,13 @@
+<h1>Add new account</h1>
+<%= start_form_tag :action => 'create' %>
+<p><label for="account_title">Title</label>:
+<%= text_field 'account', 'title' %></p>
+<p><label for="account_price">Price</label>:
+<%= text_field 'account', 'price' %></p>
+<p><label for="account_subject">Subject</label>:
+<%= collection_select(:account,:subject_id,@subjects,:id,:name) %></p>
+<p><label for="account_description">Description</label><br/>
+<%= text_area 'account', 'description' %></p>
+<%= submit_tag "Create" %>
+<%= end_form_tag %>
+<%= link_to 'Back', {:action => 'list'} %>

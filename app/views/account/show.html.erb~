@@ -1,0 +1,10 @@
+<h1><%= @account.id %></h1>
+<p><strong>Ballance: </strong> $<%= @account.ballance %><br />
+<strong>Name:</strong> <%= @account.user.first_name %><br />
+<strong>Account Type Id:</strong> <%= @account.type_id %><br />
+<strong>Account Type:</strong> <%= AccountType.find(:first, 
+				   :conditions => {:id => @account.type_id}).name %><br />
+<strong>Created Date:</strong> <%= @account.created_at %><br />
+</p>
+<hr />
+<%= link_to 'Back', {:action => 'list'} %>

@@ -1,13 +1,11 @@
 # == Schema Information
-# Schema version: 20101013042215
+# Schema version: 20101015043618
 #
 # Table name: users
 #
 #  id         :integer         not null, primary key
 #  first_name :string(20)      not null
 #  last_name  :string(20)      not null
-#  account_no :integer
-#  ballance   :float
 #  created_at :datetime
 #  email      :string(255)
 #
@@ -52,4 +50,11 @@ describe User do
     end
   end
 
+  it "should reject duplicate email addresses" do
+    # Put a user with given email address into the database.
+    User.create!(@valid_attributes)
+    user_with_duplicate_email = User.new(@valid_attributes)
+    user_with_duplicate_email.should_not be_valid
+  end
+  
 end

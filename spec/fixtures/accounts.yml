@@ -1,25 +1,22 @@
 # == Schema Information
 # Schema version: 20101015043618
 #
-# Table name: users
+# Table name: accounts
 #
 #  id         :integer         not null, primary key
-#  first_name :string(20)      not null
-#  last_name  :string(20)      not null
+#  ballance   :float
 #  created_at :datetime
-#  email      :string(255)
+#  updated_at :datetime
+#  type_id    :integer
+#  user_id    :integer
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+  type: MyString
   ballance: 1.5
 
 two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+  type: MyString
   ballance: 1.5
