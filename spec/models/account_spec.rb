@@ -16,8 +16,9 @@ require 'spec_helper'
 describe Account do
   before(:each) do
     @valid_attributes = {
-      :type => "value for type",
-      :ballance => 1.5
+      :ballance => 1.5,
+      :type_id => 1,
+      :user_id => 2
     }
   end
 

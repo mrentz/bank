@@ -20,8 +20,11 @@ describe "ViewLinks" do
 
   it "should have the right links for buttons" do
     visit new_path
+    fill_in "First Name", :with => "fred"
+    fill_in "Last Name", :with => "wilma"
+    fill_in "email", :with => "name@sdf.com"
     click_button "Create"
-    response.should render_template('users/new')
+    response.should render_template('users/list')
   end
   
   it "should have a first_name field" do

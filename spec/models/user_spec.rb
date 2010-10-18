@@ -18,7 +18,6 @@ describe User do
       :first_name => "first_name",
       :last_name => "last_name",
       :email => "value@for.email.mof",
-      :ballance => 1.5
     }
   end
 
