@@ -6,7 +6,8 @@
 <strong>Created Date:</strong> <%= @account.created_at %><br />
 </p>
 <hr />
-<%= link_to 'Back', {:action => 'list'} %>
+<%= link_to 'Back', {:controller => 'users', :action => 'list'} %>
 <%= link_to "Delete", {:action => "delete", :id => @account.id},
     :confirm => "Are you sure you want to delete this item?" %>
+
 

@@ -5,8 +5,7 @@
 <ul id="users">
 <% @users.each do |c| %>
 <li>
-<%= link_to "#{c.first_name} #{c.last_name}", 
-{:action => 'show', :id => c.id} -%>
+<%= link_to "#{c.first_name} #{c.last_name}", {:action => 'show', :id => c.id} -%>
 </li>
 <% end %>
 </ul>

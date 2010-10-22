@@ -11,7 +11,8 @@ class AccountController < ApplicationController
      @account = Account.new
      @account_types = AccountType.find(:all)
      @users = User.find(:all)
-   end
+     @user = User.find(params[:id])
+  end
 
    def create
      @account = Account.new(params[:account])
@@ -20,7 +21,8 @@ class AccountController < ApplicationController
      else
        @account_types = AccountType.find(:all)
        @users = User.find(:all)
-       render :action => 'new'
+       @user = User.find(params[:id])
+        render :action => 'new'
      end
    end
 

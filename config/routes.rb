@@ -3,7 +3,8 @@ ActionController::Routing::Routes.draw do |map|
 map.root :controller => 'users', :action => 'list'
 map.new '/new', :controller => 'users', :action => 'new'
 map.edit '/edit', :controller => 'users', :action => 'edit'
-
+map.new_account '/new_account', :controller => 'account', :action => 'new'
+ 
 # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
