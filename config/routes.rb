@@ -1,8 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+
 map.resources :users
+
 map.root :controller => 'users', :action => 'list'
+
 map.edit '/edit', :controller => 'users', :action => 'edit'
 map.new_account '/new_account', :controller => 'account', :action => 'new'
+map.account_types '/account_types', :controller => 'account_type', :action => 'new'
 
 # The priority is based upon order of creation: first created -> highest priority.
 
