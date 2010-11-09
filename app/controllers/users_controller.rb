@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to :action => 'list'
     else
-      @accounts = Accounts.find(:all)
+      @accounts = Account.find(:all)
       render :action => 'new'
     end
   end

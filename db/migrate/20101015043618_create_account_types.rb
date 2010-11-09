@@ -8,6 +8,7 @@ class CreateAccountTypes < ActiveRecord::Migration
     AccountType.create :name => "Saving"
     AccountType.create :name => "Credit"
     AccountType.create :name => "Cheque"
+    AccountType.create :name => "Mortgage"
   end
 
   def self.down

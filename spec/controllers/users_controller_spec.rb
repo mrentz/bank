@@ -9,15 +9,15 @@ describe UsersController do
     controller.should be_an_instance_of(UsersController)
   end
 
-  describe "GET 'new'" do
+  describe "GET 'users/new'" do
     it "should be successful" do
-      get 'users/new'
+      get 'new'
       response.should be_success
     end
 
     it "should have the right heading" do
-      get 'users/new'
-      response.should have_tag("h1", /Add new/)
+      get 'new'
+      response.should have_tag("h1", /Add user/)
     end
   end  
 
