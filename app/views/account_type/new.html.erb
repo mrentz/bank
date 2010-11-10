@@ -1,0 +1,16 @@
+<h1>Add Account Type</h1>
+
+<% form_for :account_type, @account_type, :url => { :action => "create" } do |f| %>
+
+<div class="field">
+  <%= f.label "Account Type:" %>
+  <%= f.text_field :name %></p>
+</div>
+
+<div class="actions">
+  <%= f.submit "Add" %>
+</div>
+
+<% end %>
+<p>
+  <%= link_to 'Back', {:action => 'list'} %>

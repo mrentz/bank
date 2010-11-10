@@ -1,0 +1,19 @@
+<% if @account_types.blank? %>
+<p>There are currently no account types in the system.</p>
+<% else %>
+<p>These are the types of account currently in our system</p>
+<ul id="accounts">
+<% @account_types.each do |c| %>
+<li>
+  <%= "#{c.name}" -%>
+ &nbsp &nbsp
+<%= link_to "Delete", {:action => "delete", :id => c.id},
+    :confirm => "Are you sure you want to delete this item?" %>
+</li>
+<% end %>
+</ul>
+<% end %>
+<p>  <%= link_to "Add new Account Type", {:action => 'new' }%>  
+<p>  <%= link_to "Back to Users List", {:controller => "users", :action => 'list' }%>  
+<br>  <%= link_to "Back to accounts List", {:controller => "account", :action => 'list' }%>  
+</p>

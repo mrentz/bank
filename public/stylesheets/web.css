@@ -1,0 +1,58 @@
+
+body {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 0.8em;
+	color: navy;
+	background-color: #ffc;
+	margin: 1em;
+	padding: 0;
+	background: #ffc  url(http://www.htmldog.com/images/bg.gif) no-repeat top right;
+}
+
+h1 {
+	color: #ffc;
+	background-color: #009;
+}
+
+/* By the way, this is a comment */
+
+h2 {
+	font-size: 1.5em;
+	background-color: #ccc;
+	margin: 1em;
+	padding: 3em;
+	border-style: dashed;
+	border-width: 3px;
+	border-left-width: 3px;
+	border-right-width: 10px;
+	border-color: red;}
+
+ p {
+	letter-spacing: 0.01em;
+	word-spacing: 0.1em;
+	line-height: 1.5;
+	text-align: left;
+}
+
+table {border-collapse:separate;
+       border-spacing:0;
+       width:50%;
+      }
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;
+	       background-color:#FEF1E9;}
+th {height:30px;
+    text-align:center;
+    font-weight: bold;
+    background-color:#EEF3E2; }
+
+#navigation {
+	position: absolute;
+	top: 100;
+	left: 2;
+	width: 100em;
+}
+
+#content {
+	margin-left: 10em;
+}
