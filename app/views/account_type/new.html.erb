@@ -1,6 +1,7 @@
 <h1>Add Account Type</h1>
 
 <% form_for :account_type, @account_type, :url => { :action => "create" } do |f| %>
+<%= f.error_messages %>
 
 <div class="field">
   <%= f.label "Account Type:" %>

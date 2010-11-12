@@ -13,7 +13,6 @@ class AccountTypeController < ApplicationController
     if @account_type.save
       redirect_to :action => 'list'
     else
-      @accounts = Account.find(:all)
       render :action => 'new'
     end
   end

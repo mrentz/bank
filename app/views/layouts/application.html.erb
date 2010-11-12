@@ -5,9 +5,14 @@
     <%= stylesheet_link_tag 'custom.css' %>
     <!--<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
     <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %> -->
-</head>
+  </head>
   <body>
-    <%= yield %>
+    <div id="content" class="round">
+      <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+      <%= yield %>
     <div class="container">
       <%= render 'layouts/footer' %>
     </div>

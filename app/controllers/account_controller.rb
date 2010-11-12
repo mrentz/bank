@@ -10,22 +10,22 @@ class AccountController < ApplicationController
    def new
      @account = Account.new
      @account_types = AccountType.find(:all)
-     @users = User.find(:all)
      @user = User.find(params[:id])
   end
 
    def create
      @account = Account.new(params[:account])
+     @user = User.find(params[:id])
+     @account_types = AccountType.find(:all)
      if @account.save
+       flash[:success] = "New Account Successfully Created"
        redirect_to :action => 'list'
      else
-       @account_types = AccountType.find(:all)
-       @users = User.find(:all)
-       @user = User.find(params[:id])
-        render :action => 'new'
+       flash[:fail] = "Account Creation was Unsuccessful"
+       render :action => 'new'
      end
    end
-
+   
    def edit
    end
    def update

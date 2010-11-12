@@ -12,7 +12,9 @@
 #
 
 class Account < ActiveRecord::Base
-belongs_to :user
-has_one :account_type
-validates_numericality_of :ballance
+  belongs_to :user
+  has_one :account_type
+  validates_presence_of  :ballance
+  validates_numericality_of :ballance
+  validates_presence_of  :user_id
 end
