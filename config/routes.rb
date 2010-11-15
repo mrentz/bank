@@ -1,10 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
-map.resources :users
-
+map.resources :users, :accounts
 map.root :controller => 'users', :action => 'list'
 
-map.edit '/edit', :controller => 'users', :action => 'edit'
+#map.edit '/edit', :controller => 'users', :action => 'edit'
 map.new_account '/new_account', :controller => 'account', :action => 'new'
 map.account_types '/account_types', :controller => 'account_type', :action => 'new'
 

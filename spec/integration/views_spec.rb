@@ -90,6 +90,8 @@ describe "ViewLinks" do
       fill_in /ballance/i, :with => ""
       click_button "Create"
       response.should render_template('account/new')
+      flash[:fail].should =~ /Account creation was unsuccessful/i
+      response.should contain(/errors/i)
       response.should contain(@new_user.first_name)
       response.should contain(@new_user.last_name)
     end

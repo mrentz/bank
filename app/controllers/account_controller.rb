@@ -27,10 +27,46 @@ class AccountController < ApplicationController
    end
    
    def edit
+     @account = Account.find(params[:id])
+     @account_types = AccountType.find(:all)
    end
+
    def update
-   end
+     @account = Account.find(params[:id])
+     if @account.update_attributes(params[:account])
+       flash[:success] = "Account Successfully updated"
+       redirect_to :action => 'show', :id => @account.id
+     else
+       flash[:fail] = "Update was Unsuccessful"
+       render :action => 'edit'
+     end
+    end
   
+   def atm
+     @account = Account.find(params[:id])
+     @account_types = AccountType.find(:all)
+   end
+
+   def update_atm
+     @account = Account.find(params[:id])
+     if params[:type] == "Deposit"
+       @account.ballance += params[:ballance].to_f
+     else
+       @account.ballance -= params[:ballance].to_f
+     end
+     if @account.update_attributes(params[:account])
+       flash[:success] = "Account Successfully updated"
+       redirect_to :action => 'show', :id => @account.id
+     else
+       flash[:fail] = "Update was Unsuccessful"
+       render :action => 'edit'
+     end
+    end
+ 
+   def deposit
+     render :partial => "update_ballance", :locals => { :identifier => "+" }
+   end
+
   def delete
     @account = Account.find(params[:id]).destroy
     redirect_to :action => 'list'

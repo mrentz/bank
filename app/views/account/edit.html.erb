@@ -1,0 +1,25 @@
+<h1><%= "Make a Deposit/Withdrawl From #{AccountType.find(:first, :conditions => {:id => @account.type_id}).name} Account: #{@account.id}" %></h1>
+
+<html>
+    <head>
+   <title>Keypad Test Code</title>
+
+    </head>
+    <body>
+   <p>
+
+<% form_for @account, :url => { :action => "update", :id => @account.id } do |f| %>
+
+<%= f.error_messages %>
+
+<div class="field">
+  <%= f.label "Ballance: " %>
+  <%= f.text_field :ballance %>
+</div><br>
+
+<div class="actions">
+  <%= f.submit "Update" %>
+  <%= link_to 'Back', {:action => 'list'} %>
+</div>
+<% end %>
+
