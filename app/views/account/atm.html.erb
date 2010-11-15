@@ -1,4 +1,4 @@
-<h1><%= "Enter New Ballance For #{AccountType.find(:first, :conditions => {:id => @account.type_id}).name} Account: #{@account.id}" %></h1>
+<h1><%= "Enter Amount to #{params[:type]} For #{AccountType.find(:first, :conditions => {:id => @account.type_id}).name} Account: #{@account.id}" %></h1>
 
 <h2><%= "Current Balance: #{@account.ballance}" %> 
 

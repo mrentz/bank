@@ -34,7 +34,7 @@ class AccountController < ApplicationController
    def update
      @account = Account.find(params[:id])
      if @account.update_attributes(params[:account])
-       flash[:success] = "Account Successfully updated"
+       flash[:success] = "Account Successfully Updated"
        redirect_to :action => 'show', :id => @account.id
      else
        flash[:fail] = "Update was Unsuccessful"
@@ -55,7 +55,7 @@ class AccountController < ApplicationController
        @account.ballance -= params[:ballance].to_f
      end
      if @account.update_attributes(params[:account])
-       flash[:success] = "Account Successfully updated"
+       flash[:success] = "Account Successfully Updated"
        redirect_to :action => 'show', :id => @account.id
      else
        flash[:fail] = "Update was Unsuccessful"
@@ -63,10 +63,6 @@ class AccountController < ApplicationController
      end
     end
  
-   def deposit
-     render :partial => "update_ballance", :locals => { :identifier => "+" }
-   end
-
   def delete
     @account = Account.find(params[:id]).destroy
     redirect_to :action => 'list'
