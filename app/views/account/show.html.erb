@@ -18,6 +18,12 @@ or
 <%= render :partial => "transaction", :locals => { :type => "Withdraw" }%>
 
 <p></br>
+<%= link_to "calculator", {:controller => 'account', 
+                        :action => 'calc', 
+                        :id => @account.id,
+                        :type => "calculator" } %>
+
+<p></br>
 <%= link_to 'Back', {:controller => 'users', :action => 'list'} %>
 <%= link_to "Delete", {:action => "delete", :id => @account.id},
     :confirm => "Are you sure you want to delete this item?" %>

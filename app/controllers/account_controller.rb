@@ -62,6 +62,10 @@ class AccountController < ApplicationController
        render :action => 'edit'
      end
     end
+
+   def calc
+     @account = Account.find(params[:id])
+    end
  
   def delete
     @account = Account.find(params[:id]).destroy

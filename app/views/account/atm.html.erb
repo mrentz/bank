@@ -6,16 +6,16 @@
     <head>
    <title>Keypad Test Code</title>
 
-    </head>
-    <body>
-   <p>
-
 <script> 
 function place_value(display_value)
 {document.calc.ballance.value +=(display_value);}
 </script>
 
-<div class = "atm"
+    </head>
+    <body>
+   <p>
+
+ <div class = atm > 
      <form action = "/account/update_atm/<%= @account.id %>" value = '' name="calc" method= "post"> 
        <input name="authenticity_token" type="hidden" value= <%= "#{form_authenticity_token}" %> >
        <input name = "type" type="hidden" value = <%= params[:type] %>>
@@ -54,7 +54,6 @@ function place_value(display_value)
 	   </tr>
 	   
 	 </table>
-	 <table>
 </div>
 <div class="actions">
   <a href="/account/list">Back</a>
