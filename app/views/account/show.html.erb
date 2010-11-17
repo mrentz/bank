@@ -27,6 +27,6 @@ or
 <p></br>
 <%= link_to 'Back', {:controller => 'users', :action => 'list'} %>
 <%= link_to "Delete", {:action => "delete", :id => @account.id},
-    :confirm => "Are you sure you want to delete this item?" %>
+    :confirm => "Are you sure you want to delete #{@account.user.first_name}\'s #{AccountType.find(:first, :conditions => {:id => @account.type_id}).name} account?" %>
 
 
