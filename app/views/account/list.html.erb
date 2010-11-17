@@ -2,16 +2,43 @@
 <p>There are not any accounts currently in the system.</p>
 <% else %>
 <p>These are the current accounts in our system</p>
-<ul id="accounts">
+
+<table border="1">
+      <tr>
+        <th>Acc No</th>
+        <th>Acc Type</th>
+        <th>Ballance</th>
+	<th>Holders Name</th>
+	<th>Edit/Delete</>
+      </tr>
+
 <% @accounts.each do |c| %>
-<li>
+<tr>
+<td>
+ &nbsp &nbsp
   <%= link_to "Acc. No: #{c.id}", {:action => 'show', :id => c.id} -%>
+</td>
+<td>
+ &nbsp &nbsp
+<%= AccountType.find(:first, :conditions => {:id => c.type_id}).name -%>
+</td>
+<td>
+ &nbsp &nbsp
+ <%= "%0.2f" % c.ballance -%>
+</td>
+<td>
+ &nbsp &nbsp
+<%= link_to "#{User.find(:first, :conditions => {:id => c.user_id}).first_name} #{User.find(:first, :conditions => {:id => c.user_id}).last_name}", 
+{:controller => 'users', :action => 'show', :id => c.user.id} -%>
+</td>
+<td>
  &nbsp &nbsp
 <%= link_to "Delete", {:action => "delete", :id => c.id},
-    :confirm => "Are you sure you want to delete this item?" %>
-</li>
+    :confirm => "Are you sure you want to delete this account?" %>
+</td>
 <% end %>
-</ul>
+</tr>
+</table>
 <% end %>
 <p>  <%= link_to "Back to Users List", {:controller => "users", :action => 'list' }%>  
 <p>  <%= link_to "View List of account types", {:controller => "account_type", :action => 'list' }%>  

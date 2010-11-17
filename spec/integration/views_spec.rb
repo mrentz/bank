@@ -54,6 +54,7 @@ describe "ViewLinks" do
     before(:each) do
       @new_user = Factory(:user)
       @acc_type = Factory(:account_type)
+      @account = Factory(:account)
       User.stub!(:find, @new_user.id).and_return(@new_user)
     end
     
@@ -69,11 +70,11 @@ describe "ViewLinks" do
       response.should contain(/add new account/i)
       click_link /add new account/i
       response.should render_template('account/new')
-    end
-    
-    it "should create a new account for the user" do
-      visit "account/new"
-      response.should render_template('account/new')
+#    end
+#    
+#    it "should create a new account for the user" do
+#      visit "account/new"
+#      response.should render_template('account/new')
       response.should contain(/Create new Account For/i)
       response.should contain(@new_user.first_name)
       response.should contain(@new_user.last_name)
@@ -83,6 +84,21 @@ describe "ViewLinks" do
       response.should be_success
       response.should render_template('account/list')
       flash[:success].should =~ /New Account Successfully Created/i
+      response.should have_tag("a", "Acc. No: #{@account.id}")
+      click_link "Acc. No: #{@account.id}"
+      response.should render_template('account/show')
+      response.should contain("#{@new_user.first_name} #{@new_user.last_name}")
+      response.should have_tag("a", /calculator/i)
+      click_link "calculator"
+      response.should render_template('account/calc')
+      click_link "Back"
+      response.should render_template('account/show')
+ #     puts response.body
+      response.should have_tag("a", /Deposit/i)
+      click_link "Deposit"
+      response.should render_template('account/atm')
+      click_button "clear"
+#      click_button "1"
     end
     
     it "should remain on page if no balance is selected" do
@@ -95,6 +111,41 @@ describe "ViewLinks" do
       response.should contain(@new_user.first_name)
       response.should contain(@new_user.last_name)
     end
-  end
+
+#    it "should show a list of users" do
+#      get "/"
+#      response.should render_template("users/list")
+#      response.should contain(/These are the current users in our system/)
+#      response.should have_tag("a")
+#      puts response.body
+#      response.should have_tag("li")
+#      response.should have_tag("a", /Add new User/i)
+#      response.should have_tag("a", :text => "Add new User")
+#    end
+
+    it "should show a list of accounts for a user" do
+      get "account/show/#{@account.id}"
+      response.should contain(/Account/)
+      response.should contain("Account: #{@account.id}")
+      response.should contain(/Created date/i)
+      response.should contain(@new_user.first_name)
+      response.should contain(@new_user.last_name)
+      response.should have_tag("a", /edit/i)
+      response.should have_tag("a", "Deposit")
+    end
   
+#    it "should have a working calculator" do
+#      visit "account/calc/#{@account.id}"
+#      response.should render_template('account/calc')
+#      click_button "1"
+#      click_button "+"
+#      click_button "1"
+#      click_button "1"
+#      click_button "1"
+#      click_button "="
+#      response.should contain("112")
+#      click_link "Back"
+#      response.should render_template('account/show')
+#    end
+  end
 end
