@@ -98,7 +98,7 @@ describe "ViewLinks" do
       click_link "Deposit"
       response.should render_template('account/atm')
       click_button "clear"
-#      click_button "1"
+##      click_button "1"
     end
     
     it "should remain on page if no balance is selected" do
