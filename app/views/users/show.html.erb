@@ -13,12 +13,15 @@
 <%@user.accounts.each do |c| %>
 <tr>
 <td>
+ &nbsp
 <%= link_to c.id, :controller => "account", :action => "show", :id => c.id -%>
 </td>
 <td>
+ &nbsp
 <%= AccountType.find(:first, :conditions => {:id => c.type_id}).name -%>
 </td>
 <td>
+ &nbsp
 <%= c.ballance -%>
 </td>
 <% end %>
