@@ -1,11 +1,11 @@
 <h1><%= "Account: #{@account.id}" %></h1>
-<p><strong>Ballance: </strong> $<%= @account.ballance %><br />
-<strong>Name:</strong> <%= "#{@account.user.first_name} #{@account.user.last_name}" %><br />
+<p></p><strong>Ballance: </strong> $<%= @account.ballance %><br>
+<strong>Name:</strong> <%= "#{@account.user.first_name} #{@account.user.last_name}" %><br>
 <strong>Account Type:</strong> <%= AccountType.find(:first, 
-				   :conditions => {:id => @account.type_id}).name %><br />
-<strong>Created Date:</strong> <%= @account.created_at %><br />
-</p>
-<hr />
+				   :conditions => {:id => @account.type_id}).name %><br>
+<strong>Created Date:</strong> <%= @account.created_at %><br>
+<p></p>
+<hr>
 
 <%= link_to "Edit Account Balance ", {:controller => 'account', 
                         :action => 'edit', 
@@ -17,14 +17,14 @@
 or
 <%= render :partial => "transaction", :locals => { :type => "Withdraw" }%>
 
-<p></br>
+<p></p><br>
 
 <%= link_to "calculator", {:controller => 'account', 
                         :action => 'calc', 
                         :id => @account.id,
                         :type => "calculator" } %>
 
-<p></br>
+<p></p><br>
 <%= link_to 'Back', {:controller => 'users', :action => 'list'} %>
 <%= link_to "Delete", {:action => "delete", :id => @account.id},
     :confirm => "Are you sure you want to delete #{@account.user.first_name}\'s #{AccountType.find(:first, :conditions => {:id => @account.type_id}).name} account?" %>

@@ -9,7 +9,7 @@
         <th>Acc Type</th>
         <th>Ballance</th>
 	<th>Holders Name</th>
-	<th>Edit/Delete</>
+	<th>Edit/Delete</th>
       </tr>
 
 <% @accounts.each do |c| %>
@@ -36,10 +36,9 @@
 <%= link_to "Delete", {:action => "delete", :id => c.id},
     :confirm => "Are you sure you want to delete this account?" %>
 </td>
-<% end %>
 </tr>
+<% end %>
 </table>
 <% end %>
-<p>  <%= link_to "Back to Users List", {:controller => "users", :action => 'list' }%>  
-<p>  <%= link_to "View List of account types", {:controller => "account_type", :action => 'list' }%>  
-</p>
+<p><%= link_to "Back to Users List", {:controller => "users", :action => 'list' }%></p> 
+<p><%= link_to "View List of account types", {:controller => "account_type", :action => 'list' }%></p>
