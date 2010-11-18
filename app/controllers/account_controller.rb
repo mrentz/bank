@@ -50,9 +50,9 @@ class AccountController < ApplicationController
    def update_atm
      @account = Account.find(params[:id])
      if params[:type] == "Deposit"
-       @account.ballance += params[:ballance].to_f
+       @account.balance += params[:balance].to_f
      else
-       @account.ballance -= params[:ballance].to_f
+       @account.balance -= params[:balance].to_f
      end
      if @account.update_attributes(params[:account])
        flash[:success] = "Account Successfully Updated"

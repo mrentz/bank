@@ -4,7 +4,7 @@
 # Table name: accounts
 #
 #  id         :integer         not null, primary key
-#  ballance   :float
+#  balance   :float
 #  created_at :datetime
 #  updated_at :datetime
 #  type_id    :integer
@@ -18,7 +18,7 @@ describe Account do
     @bank_account = Factory(:account)
     @valid_attributes = 
       {
-      :ballance => 1.5,
+      :balance => 1.5,
       :type_id => 1,
       :user_id => 2
     }
@@ -28,8 +28,8 @@ describe Account do
     Account.create!(@valid_attributes)
   end
 
-  it "ballance should be the value defined in the factory " do
-    @bank_account.ballance.should == 1.5
+  it "balance should be the value defined in the factory " do
+    @bank_account.balance.should == 1.5
   end
 
 

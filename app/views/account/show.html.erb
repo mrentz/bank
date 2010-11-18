@@ -1,5 +1,5 @@
 <h1><%= "Account: #{@account.id}" %></h1>
-<p></p><strong>Ballance: </strong> $<%= @account.ballance %><br>
+<p></p><strong>Balance: </strong> $<%= @account.balance %><br>
 <strong>Name:</strong> <%= "#{@account.user.first_name} #{@account.user.last_name}" %><br>
 <strong>Account Type:</strong> <%= AccountType.find(:first, 
 				   :conditions => {:id => @account.type_id}).name %><br>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101015043618) do
+ActiveRecord::Schema.define(:version => 20101118024002) do
 
   create_table "account_types", :force => true do |t|
     t.string   "name"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20101015043618) do
   end
 
   create_table "accounts", :force => true do |t|
-    t.float    "ballance"
+    t.float    "balance"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "type_id"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20101015043618) do
     t.string   "first_name", :limit => 20, :null => false
     t.string   "last_name",  :limit => 20, :null => false
     t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "email"
   end
 

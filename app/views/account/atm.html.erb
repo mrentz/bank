@@ -1,6 +1,6 @@
 <h1><%= "Enter Amount to #{params[:type]} For #{AccountType.find(:first, :conditions => {:id => @account.type_id}).name} Account: #{@account.id}" %></h1>
 
-<h2><%= "Current Balance: #{@account.ballance}" %> 
+<h2><%= "Current Balance: #{@account.balance}" %> 
 
 <html>
     <head>
@@ -8,7 +8,7 @@
 
 <script> 
 function place_value(display_value)
-{document.calc.ballance.value +=(display_value);}
+{document.calc.balance.value +=(display_value);}
 </script>
 
     </head>
@@ -24,9 +24,9 @@ function place_value(display_value)
 	 <table>
 	   <tr>
 	     <td colspan=3 width=75%>
-	       <input name="ballance" type="text" id="account_ballance" ></td>
+	       <input name="balance" type="text" id="account_balance" ></td>
 	     <td>
-	       <input type="button" onClick="document.calc.ballance.value =('')" 
+	       <input type="button" onClick="document.calc.balance.value =('')" 
 		      value="Clear" </td>
 		      </tr>
 	   <tr>

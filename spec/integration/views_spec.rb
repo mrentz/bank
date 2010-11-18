@@ -78,7 +78,7 @@ describe "ViewLinks" do
       response.should contain(/Create new Account For/i)
       response.should contain(@new_user.first_name)
       response.should contain(@new_user.last_name)
-      fill_in /Ballance/i, :with => "100"
+      fill_in /Balance/i, :with => "100"
       select @acc_type.name, :from => "account[type_id]"
       click_button "Create"
       response.should be_success
@@ -103,7 +103,7 @@ describe "ViewLinks" do
     
     it "should remain on page if no balance is selected" do
       visit "account/new"
-      fill_in /ballance/i, :with => ""
+      fill_in /balance/i, :with => ""
       click_button "Create"
       response.should render_template('account/new')
       flash[:fail].should =~ /Account creation was unsuccessful/i
