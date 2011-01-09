@@ -16,10 +16,10 @@ one:
   first_name: MyString
   last_name: MyString
   email: MyString
-  ballance: 1.5
+  balance: 1.5
 
 two:
   first_name: MyString
   last_name: MyString
   email: MyString
-  ballance: 1.5
+  balance: 1.5

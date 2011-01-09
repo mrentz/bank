@@ -1,12 +1,13 @@
 
 body {
-	font-family: arial, helvetica, sans-serif;
+ 	font-family: arial, helvetica, sans-serif;
 	font-size: 0.8em;
 	color: navy;
 	background-color: #ffc;
+	background-image:url('/images/Leaf.png');
 	margin: 1em;
 	padding: 0;
-	background: #ffc  url(http://www.htmldog.com/images/bg.gif) no-repeat top right;
+	background: #ffc  /*url(http://www.htmldog.com/images/bg.gif) no-repeat top right; */
 }
 
 h1 {
@@ -109,4 +110,9 @@ color: #333;
 border-collapse:separate;
        border-spacing:0;
        width:20%;
+}
+
+div#sidebar {
+   width: 200px;
+   margin-left: 480px;
 }

@@ -8,7 +8,7 @@
   <%= "#{c.name}" -%>
  &nbsp &nbsp
 <%= link_to "Delete", {:action => "delete", :id => c.id},
-    :confirm => "This will bugger things if there are users who have this account type" %>
+    :confirm => "This will erase everybodies #{c.name} accounts on the whole system" %>
 </li>
 <% end %>
 </ul>

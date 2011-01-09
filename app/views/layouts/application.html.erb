@@ -9,10 +9,11 @@
   <body>
     <div id="content" class="round">
       <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %>"</div>
+      <div class="flash <%= key %>"><%= value %></div>
       <% end %>
     </div>
-      <%= yield %>
+	<%= image_tag("park.jpg", :size => "800x200", :alt => "Sample App", :class => "round") %>
+    <%= yield %>
     <div class="container">
       <%= render 'layouts/footer' %>
     </div>

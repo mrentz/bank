@@ -33,4 +33,4 @@
 <%= link_to 'Back', {:action => 'list'} %>
 <%= link_to 'Edit', {:action => 'edit', :id => @user.id} %>
 <b> <%= link_to "Delete", {:action => 'delete', :id => @user.id},
-:confirm => "Are you sure you want to delete this item?" %></b>
+:confirm => "Are you sure you want to delete #{@user.first_name} from the system?" %></b>

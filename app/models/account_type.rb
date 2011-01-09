@@ -10,6 +10,6 @@
 #
 
 class AccountType < ActiveRecord::Base
-  has_many :accounts
+  has_many :accounts, :dependent => :destroy
   validates_presence_of :name
 end

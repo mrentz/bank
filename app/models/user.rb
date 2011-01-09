@@ -11,7 +11,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :accounts
+  has_many :accounts, :dependent => :destroy
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates_presence_of :email
   validates_uniqueness_of :email

@@ -47,7 +47,6 @@ describe "ViewLinks" do
     visit 'users/new'
     response.should have_selector("input[id='user_first_name']")
     response.should have_selector("input[name='user[first_name]']")
-    response.should have_selector("label[for='user_First Name:']")
   end
   
   describe "user data" do
@@ -87,7 +86,7 @@ describe "ViewLinks" do
       response.should have_tag("a", "Acc. No: #{@account.id}")
       click_link "Acc. No: #{@account.id}"
       response.should render_template('account/show')
-      response.should contain("#{@new_user.first_name} #{@new_user.last_name}")
+      response.should include_text("#{@new_user.first_name} #{@new_user.last_name}")
       response.should have_tag("a", /calculator/i)
       click_link "calculator"
       response.should render_template('account/calc')
@@ -95,6 +94,7 @@ describe "ViewLinks" do
       response.should render_template('account/show')
  #     puts response.body
       response.should have_tag("a", /Deposit/i)
+      response.should include_text("Deposit")
       click_link "Deposit"
       response.should render_template('account/atm')
       click_button "clear"
@@ -112,16 +112,17 @@ describe "ViewLinks" do
       response.should contain(@new_user.last_name)
     end
 
-#    it "should show a list of users" do
-#      get "/"
-#      response.should render_template("users/list")
-#      response.should contain(/These are the current users in our system/)
-#      response.should have_tag("a")
+    it "should show a list of users" do
+      get "/"
+      response.should render_template("users/list")
+      response.should contain(/These are the current users in our system/)
+      response.should have_tag("a")
 #      puts response.body
 #      response.should have_tag("li")
+      response.should have_tag("a")
 #      response.should have_tag("a", /Add new User/i)
 #      response.should have_tag("a", :text => "Add new User")
-#    end
+   end
 
     it "should show a list of accounts for a user" do
       get "account/show/#{@account.id}"
@@ -134,18 +135,18 @@ describe "ViewLinks" do
       response.should have_tag("a", "Deposit")
     end
   
-#    it "should have a working calculator" do
-#      visit "account/calc/#{@account.id}"
-#      response.should render_template('account/calc')
-#      click_button "1"
-#      click_button "+"
-#      click_button "1"
+    it "should have a working calculator" do
+      visit "account/calc/#{@account.id}"
+      response.should render_template('account/calc')
+      click_button "1"
+      click_button "+"
+      click_button "1"
 #      click_button "1"
 #      click_button "1"
 #      click_button "="
 #      response.should contain("112")
 #      click_link "Back"
 #      response.should render_template('account/show')
-#    end
+    end
   end
 end

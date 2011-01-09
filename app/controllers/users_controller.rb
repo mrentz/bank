@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      flash[:success] = "New User Successfully Created"
       redirect_to :action => 'list'
     else
       @accounts = Account.find(:all)
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
+      flash[:success] = "New User Successfully Updated"
       redirect_to :action => 'show', :id => @user.id
     else 
       render :action => 'edit'

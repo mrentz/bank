@@ -4,7 +4,7 @@
 # Table name: accounts
 #
 #  id         :integer         not null, primary key
-#  ballance   :float
+#  balance   :float
 #  created_at :datetime
 #  updated_at :datetime
 #  type_id    :integer
@@ -15,8 +15,8 @@
 
 one:
   type: MyString
-  ballance: 1.5
+  balance: 1.5
 
 two:
   type: MyString
-  ballance: 1.5
+  balance: 1.5
