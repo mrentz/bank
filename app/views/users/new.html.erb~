@@ -1,2 +1,26 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Add user</h1>
+
+<% form_for(@user) do |f| %>
+<%= f.error_messages %>
+
+<div class="field">
+  <%= f.label :first_name, "First Name:" %>
+<%= f.text_field :first_name %>
+</div><br>
+
+<div class="field">
+  <%= f.label "Last Name:" %>
+<%= f.text_field :last_name %>
+</div><br>
+
+<div class="field">
+  <%= f.label "Email:" %>
+<%= f.text_field :email %>
+</div><br>
+
+<div class="actions">
+  <%= f.submit "Create" %>
+</div>
+
+<% end %>
+  <%= link_to 'Back', {:action => 'list'} %>

@@ -101,6 +101,15 @@ font-size: 16px;}
 .success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
 .success a {color:#264409;}
 
+.error, .notice, .fail {
+padding:.8em;
+margin-bottom:1em;
+border:2px solid #ddd;
+text-align: left;
+font-size: 16px;}
+.fail {background:#DC143C;color:#263409;border-color:#C6D880;}
+.fail a {color:#264409;}
+
 .atm {text-align: left;
 font-weight: bold;
 padding: 15px 15px 15px 15px;

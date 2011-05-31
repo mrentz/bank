@@ -26,8 +26,8 @@ When I fill in the following:
 And I press "Create"
 Then I should be on the users page
 And I should see "There were problems with the following fields:"
-And I should see "Email can't be blank"
-And I should see "Email is invalid"
+#And I should see "Email can't be blank"
+#And I should see "Email is invalid"
 And I should see "First name can't be blank"
 And I should see "First name is too short (minimum is 1 characters)"
 And I should see "Last name can't be blank"

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       flash[:success] = "New User Successfully Created"
       redirect_to :action => 'list'
     else
+     flash.now[:fail] = "New User Unsuccessfully Created"
       @accounts = Account.find(:all)
       render :action => 'new'
     end

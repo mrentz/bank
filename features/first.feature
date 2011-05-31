@@ -1,6 +1,6 @@
 
 Feature: TasksCreating New Users
-In order to keep track of taskshave users
+In order to keep track of users
 People should be able to
 Create a new user
 
@@ -9,7 +9,7 @@ Given I am on the users list page
 Then I should see "Add new User"
 When I follow "Add new User"
 Then I should see "Add user"
-And I should see "First name"
+And I should see "First name:"
 And I should see "Last name:"
 And I should see "Email:"
 And I should see "Back"
@@ -22,7 +22,7 @@ Given I am on the users list page
 Then I should see "Add new User"
 When I follow "Add new User"
 Then I should see "Add user"
-And I should see "First name"
+And I should see "First name:"
 And I should see "Last name:"
 And I should see "Email:"
 And I should see "Back"
