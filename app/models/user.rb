@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates_format_of :email, :with => EmailRegex
   validates_uniqueness_of :email, :case_sensitive => false
-  validates_presence_of :first_name, :message => 'Please provide a from name.'
+  validates_presence_of :first_name, :message => 'can\'t be blank.'
   validates_length_of :first_name, :within => 1..12
   validates_presence_of :last_name
   validates_length_of :last_name, :maximum => 12
